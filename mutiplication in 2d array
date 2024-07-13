@@ -1,0 +1,87 @@
+
+#include <iostream>
+using namespace std;
+int main() {
+int m,n,q,p;
+//for matrxi1
+cout<<"enter the number of rows";
+cin>>m;
+cout<<"enter the number of column";
+cin>>n;
+//for matrxi2
+cout<<"enter the number of rows";
+cin>>p;
+cout<<"enter the number of column";
+cin>>q;
+int j;
+int arr[m][n];
+int brr[p][q];
+cout<<"enter the values in array1";
+for(int i=0;i<m;i++)
+{
+    for(int j=0;j<n;j++)
+    {
+        cin>>arr[i][j];
+    }
+}
+//max
+
+cout<<"enter the values in array2";
+for(int i=0;i<p;i++)
+{
+    for(int j=0;j<q;j++)
+    {
+        cin>>brr[i][j];
+    }
+}
+
+for(int i=0;i<m;i++)
+{
+    for(int j=0;j<n;j++)
+    {
+        cout<<arr[i][j]<<" ";
+    }
+    cout<<endl;
+}
+
+for(int i=0;i<p;i++)
+{
+    for(int j=0;j<q;j++)
+    {
+        cout<<brr[i][j]<<" ";
+    }
+    cout<<endl;
+}
+
+if(n==p)
+{
+    int res[m][q];
+for(int i=0;i<m;i++)
+{
+    for(int j=0;j<q;j++)
+    {
+        res[i][j]=0;
+        for(int k=0;k<n;k++)
+        {
+            res[i][j]+=arr[i][k]*brr[k][j];
+        }
+    }
+}
+
+for(int i=0;i<m;i++)
+{
+    for(int j=0;j<q;j++)
+    {
+        cout<<res[i][j]<<" ";
+    }
+    cout<<endl;
+}
+}
+else{
+    cout<<"multiplication not possible"<<endl;
+}
+
+
+
+    return 0;
+}
